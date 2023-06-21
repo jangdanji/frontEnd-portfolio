@@ -10,6 +10,7 @@
     "deploy": "gh-pages -d dist",
     "sass" : "sass ./css/style.scss ./css/style.css"
   },
+  "homepage": "https://jandanji.github.io/frontEnd-portfolio",
   "author": "",
   "license": "ISC",
   "dependencies": {
