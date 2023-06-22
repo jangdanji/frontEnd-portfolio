@@ -15,5 +15,24 @@
   justify-content: center;
   align-items: center;
 }
+.container .intro .profilePhoto {
+  width: 750px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  position: relative;
+}
+.container .intro .profilePhoto .photoBox {
+  display: flex;
+  position: absolute;
+}
+.container .intro .profilePhoto .photoBox img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
 
 /*# sourceMappingURL=/style.6b54f5b7.css.map */

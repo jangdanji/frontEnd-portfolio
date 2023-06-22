@@ -8,16 +8,15 @@
     "build": "parcel build index.html --public-url ./ --no-content-hash",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "sass" : "sass ./css/style.scss ./css/style.css"
+    "sass": "sass ./css/style.scss ./css/style.css"
   },
   "homepage": "https://jandanji.github.io/frontEnd-portfolio",
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/jquery": "^3.5.16",
     "gh-pages": "^5.0.0",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.63.5"
   }
 }
-
-
