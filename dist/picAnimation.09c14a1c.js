@@ -144,11 +144,14 @@ function introAnimate() {
   /* 사진 */
   gsap.to($('.photoBox'), {
     left: 0,
+    /* 기본 상태는 -200px */
     onComplete: function onComplete() {
       gsap.to($('.photoBox'), {
-        left: -250,
+        left: -200,
         duration: 0
       });
+
+      /* 마지막 사진을 remove한 뒤의 마지막 사진을 clone해서 맨 앞에다가 갖다 붙이기 */
       $('.photoBox img:last-child').remove();
       var lastPic = $('.photoBox img:last-child');
       lastPic = lastPic.clone();
@@ -170,23 +173,25 @@ function introAnimate() {
     zIndex: 2
   });
 
+  /* dots */
+
   /* 텍스트 */
-  gsap.to($('.profileMsg .motto > p'), {
+  gsap.to($('.profileMsg .motto div'), {
     top: 0,
     onComplete: function onComplete() {
-      gsap.to($('.profileMsg .motto > p'), {
+      gsap.to($('.profileMsg .motto div'), {
         top: '-60px',
         duration: 0
       });
-      var lastMotto = $('.profileMsg .motto > p > p:last-child');
+      var lastMotto = $('.profileMsg .motto div > p:last-child');
       lastMotto = lastMotto.clone();
-      $('.profileMsg .motto > p').prepend(lastMotto);
-      $('.profileMsg .motto > p > p:last-child').remove();
+      $('.profileMsg .motto div').prepend(lastMotto);
+      $('.profileMsg .motto div p:last-child').remove();
     }
   });
 }
 var textMachine = document.querySelector('.profileMsg .motto');
-var text = document.createElement('p');
+var text = document.createElement('div');
 text.style.position = 'absolute';
 text.style.width = '100%';
 text.style.top = '-60px';
@@ -220,7 +225,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "7441" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "3723" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

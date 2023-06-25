@@ -2,20 +2,43 @@
   padding: 0;
   margin: 0; }
 
+li {
+  list-style: none; }
+
 .container {
   width: 100%;
   height: 2000px;
-  background-color: #1766FF; }
+  background-color: #1766FF;
+  position: relative; }
+  .container .header {
+    width: 1320px;
+    margin: 0 auto; }
+    .container .header ul {
+      position: fixed;
+      top: 20px;
+      z-index: 10;
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: bold; }
+      .container .header ul li {
+        padding: 10px 0;
+        display: inline-block;
+        margin: 0 10px;
+        cursor: pointer; }
+        .container .header ul li:hover {
+          text-decoration: underline; }
+  .container section {
+    width: 1320px;
+    margin: 0 auto; }
   .container .intro {
-    width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; }
+    justify-content: space-evenly;
+    align-items: center; }
     .container .intro .profilePhoto {
-      width: 750px;
-      height: 375px;
+      width: 600px;
+      height: 240px;
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -23,23 +46,34 @@
       .container .intro .profilePhoto .photoBox {
         display: flex;
         position: absolute;
-        left: -250px; }
+        left: -200px; }
         .container .intro .profilePhoto .photoBox img {
-          width: 250px;
-          height: 250px;
+          width: 200px;
+          height: 200px;
           object-fit: cover;
           border-radius: 20px;
           display: block; }
     .container .intro .profileMsg {
       color: white;
-      font-size: 48px;
+      font-size: 36px;
       line-height: 60px;
+      letter-spacing: -4px;
       font-weight: bold;
       text-align: center; }
       .container .intro .profileMsg .motto {
         overflow: hidden;
         position: relative;
         height: 60px; }
+  .container .skills .puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 300px;
+    height: 300px; }
+  .container .skills .puzzle-piece {
+    background-color: #eaeaea;
+    border: 1px solid #999999; }
 
 
 /*# sourceMappingURL=/style.6b54f5b7.css.map */

@@ -21,13 +21,13 @@ function introAnimate(){
 
     /* 사진 */
     gsap.to($('.photoBox'), {
-        left: 0,
+        left: 0, /* 기본 상태는 -200px */
         onComplete: () => {
 
-            gsap.to($('.photoBox'), {left: -250, duration: 0})
+            gsap.to($('.photoBox'), {left: -200, duration: 0})
 
-            $('.photoBox img:last-child').remove()
-            
+            /* 마지막 사진을 remove한 뒤의 마지막 사진을 clone해서 맨 앞에다가 갖다 붙이기 */
+            $('.photoBox img:last-child').remove() 
             let lastPic = $('.photoBox img:last-child')
             lastPic = lastPic.clone()
             $('.photoBox').prepend(lastPic)
@@ -40,24 +40,28 @@ function introAnimate(){
     gsap.to($('.photoBox img:nth-child(2)'), {scale: 1.2, zIndex: 3, filter: 'brightness(100%)', opacity: 1}) /* top */
     gsap.to($('.photoBox img:nth-child(3)'), {scale: 1.0, zIndex: 2})
 
+    /* dots */
+
+
+
     /* 텍스트 */
-    gsap.to($('.profileMsg .motto > p'), {
+    gsap.to($('.profileMsg .motto div'), {
         top: 0,
         onComplete: () => {
-            gsap.to( $('.profileMsg .motto > p') , {top: '-60px', duration:0} )
+            gsap.to( $('.profileMsg .motto div') , {top: '-60px', duration:0} )
 
-            let lastMotto = $('.profileMsg .motto > p > p:last-child')
+            let lastMotto = $('.profileMsg .motto div > p:last-child')
             lastMotto = lastMotto.clone()
-            $('.profileMsg .motto > p').prepend(lastMotto)
+            $('.profileMsg .motto div').prepend(lastMotto)
 
-            $('.profileMsg .motto > p > p:last-child').remove()
+            $('.profileMsg .motto div p:last-child').remove()
         }
     })
 
 }
 
 const textMachine = document.querySelector('.profileMsg .motto')
-let text = document.createElement('p')
+let text = document.createElement('div')
 text.style.position = 'absolute'
 text.style.width = '100%'
 text.style.top = '-60px'
