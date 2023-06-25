@@ -119,35 +119,82 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/picAnimation.js":[function(require,module,exports) {
 var myImgBox = document.querySelector('.profilePhoto .photoBox');
-for (var _i = 1; _i < 4; _i++) {
+for (var i = 1; i < 4; i++) {
   var myImg = document.createElement('img');
-  myImg.setAttribute('src', "./img/img_0".concat(_i, ".jpg"));
-  myImg.style.left = "".concat((_i - 1) * 250, "px");
+  myImg.setAttribute('src', "./img/img_0".concat(i, ".jpg"));
+  myImg.style.left = "".concat((i - 1) * 250, "px");
   myImg.style.scale = '0';
   myImgBox.appendChild(myImg);
 }
+var clone = myImgBox.children[0];
+clone = clone.cloneNode(true);
+myImgBox.append(clone);
 gsap.to($('.photoBox img'), {
-  scale: 1
+  scale: 1,
+  filter: 'brightness(30%)',
+  opacity: 0.8
 });
-gsap.to($('.photoBox img:nth-child(2)'), {
+gsap.to($('.photoBox img:nth-child(3)'), {
   scale: 1.2,
-  zIndex: 2
+  zIndex: 2,
+  filter: 'brightness(100%)',
+  opacity: 1
 });
+function introAnimate() {
+  /* 사진 */
+  gsap.to($('.photoBox'), {
+    left: 0,
+    onComplete: function onComplete() {
+      gsap.to($('.photoBox'), {
+        left: -250,
+        duration: 0
+      });
+      $('.photoBox img:last-child').remove();
+      var lastPic = $('.photoBox img:last-child');
+      lastPic = lastPic.clone();
+      $('.photoBox').prepend(lastPic);
+    }
+  });
+  gsap.to($('.photoBox img'), {
+    filter: 'brightness(30%)',
+    opacity: 0.8
+  });
+  gsap.to($('.photoBox img:nth-child(2)'), {
+    scale: 1.2,
+    zIndex: 3,
+    filter: 'brightness(100%)',
+    opacity: 1
+  }); /* top */
+  gsap.to($('.photoBox img:nth-child(3)'), {
+    scale: 1.0,
+    zIndex: 2
+  });
+
+  /* 텍스트 */
+  gsap.to($('.profileMsg .motto > p'), {
+    top: 0,
+    onComplete: function onComplete() {
+      gsap.to($('.profileMsg .motto > p'), {
+        top: '-60px',
+        duration: 0
+      });
+      var lastMotto = $('.profileMsg .motto > p > p:last-child');
+      lastMotto = lastMotto.clone();
+      $('.profileMsg .motto > p').prepend(lastMotto);
+      $('.profileMsg .motto > p > p:last-child').remove();
+    }
+  });
+}
+var textMachine = document.querySelector('.profileMsg .motto');
+var text = document.createElement('p');
+text.style.position = 'absolute';
+text.style.width = '100%';
+text.style.top = '-60px';
+text.innerHTML = "\n    <p>\uBB34\uD55C\uD55C \uAC00\uB2A5\uC131\uC744 \uAC00\uC9C4</p>\n    <p>\uC131\uACF5\uD560 \uB54C\uAE4C\uC9C0 \uB3C4\uC804\uD558\uB294</p>\n    <p>\uD55C\uACC4\uB97C \uB6F0\uC5B4\uB118\uB294</p>\n";
+textMachine.append(text);
 setInterval(function () {
-  var imgCopy = document.querySelector('.photoBox img:last-child');
-  var imgCopyUrl = imgCopy.getAttribute('src');
-  var appendImg = document.createElement('img');
-  appendImg.setAttribute('src', imgCopyUrl);
-  var insertTarget = document.querySelector('.profilePhoto .photoBox img:first-child');
-  myImgBox.insertBefore(appendImg, insertTarget);
-
-  // gsap.to($('.photoBox'), {
-  //     left: 250
-  // })
-
-  // gsap.to( $('.photoBox img:nth-child(2)'), {scale: 1, zIndex: 1} )
-}, 1000);
-var i = document.querySelector('.profilePhoto .photoBox img:nth-child(2)');
+  introAnimate();
+}, 2000);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -173,7 +220,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61476" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "7441" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

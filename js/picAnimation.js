@@ -9,29 +9,75 @@ for (let i = 1; i < 4; i++) {
     myImgBox.appendChild(myImg)
 }
 
-gsap.to( $('.photoBox img'), {scale: 1} )
-gsap.to( $('.photoBox img:nth-child(2)'), {scale: 1.2, zIndex: 2} )
+let clone = myImgBox.children[0]
+clone = clone.cloneNode(true)
+myImgBox.append(clone)
+
+gsap.to( $('.photoBox img'), {scale: 1, filter: 'brightness(30%)', opacity: 0.8} )
+gsap.to( $('.photoBox img:nth-child(3)'), {scale: 1.2, zIndex: 2, filter: 'brightness(100%)', opacity: 1} )
+
+
+function introAnimate(){
+
+    /* 사진 */
+    gsap.to($('.photoBox'), {
+        left: 0,
+        onComplete: () => {
+
+            gsap.to($('.photoBox'), {left: -250, duration: 0})
+
+            $('.photoBox img:last-child').remove()
+            
+            let lastPic = $('.photoBox img:last-child')
+            lastPic = lastPic.clone()
+            $('.photoBox').prepend(lastPic)
+
+        }
+    })
+
+
+    gsap.to($('.photoBox img'), {filter: 'brightness(30%)', opacity: 0.8})
+    gsap.to($('.photoBox img:nth-child(2)'), {scale: 1.2, zIndex: 3, filter: 'brightness(100%)', opacity: 1}) /* top */
+    gsap.to($('.photoBox img:nth-child(3)'), {scale: 1.0, zIndex: 2})
+
+    /* 텍스트 */
+    gsap.to($('.profileMsg .motto > p'), {
+        top: 0,
+        onComplete: () => {
+            gsap.to( $('.profileMsg .motto > p') , {top: '-60px', duration:0} )
+
+            let lastMotto = $('.profileMsg .motto > p > p:last-child')
+            lastMotto = lastMotto.clone()
+            $('.profileMsg .motto > p').prepend(lastMotto)
+
+            $('.profileMsg .motto > p > p:last-child').remove()
+        }
+    })
+
+}
+
+const textMachine = document.querySelector('.profileMsg .motto')
+let text = document.createElement('p')
+text.style.position = 'absolute'
+text.style.width = '100%'
+text.style.top = '-60px'
+text.innerHTML = `
+    <p>무한한 가능성을 가진</p>
+    <p>성공할 때까지 도전하는</p>
+    <p>한계를 뛰어넘는</p>
+`
+textMachine.append(text)
+
+
+
 
 
 setInterval(()=>{
+    introAnimate()
+}, 2000)
 
-    const imgCopy = document.querySelector('.photoBox img:last-child')
-    const imgCopyUrl = imgCopy.getAttribute('src')
-    
-    const appendImg = document.createElement('img')
-    appendImg.setAttribute('src', imgCopyUrl)
 
-    const insertTarget = document.querySelector('.profilePhoto .photoBox img:first-child')
 
-    myImgBox.insertBefore(appendImg, insertTarget)
 
-    // gsap.to($('.photoBox'), {
-    //     left: 250
-    // })
 
-    // gsap.to( $('.photoBox img:nth-child(2)'), {scale: 1, zIndex: 1} )
-
-}, 1000)
-
-const i = document.querySelector('.profilePhoto .photoBox img:nth-child(2)')
 
