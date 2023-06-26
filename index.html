@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,17 @@
 
     <!-- js -->
     <script src="./js/picAnimation.js" defer></script>
+    <script src="./js/puzzleMaker.js" defer></script>
+    <script src="./js/test.js" defer></script>
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
     <!-- gsap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
-    
+
 </head>
+
 <body>
 
     <div class="container">
@@ -31,14 +35,17 @@
         </header>
 
         <section class="intro">
-            <div class="profilePhoto">
-                <div class="photoBox">
-                    
-                </div>
-                <div class="dots">
-
+            <div class="introAnimation">
+                <div class="profilePhoto">
+                    <div class="photoBox">
+    
+                    </div>
+                    <div class="dots">
+    
+                    </div>
                 </div>
             </div>
+
             <div class="profileMsg">
                 <p>안녕하세요 김나단입니다!</p>
                 <div class="motto"></div>
@@ -48,19 +55,60 @@
 
         <section class="skills">
             <div class="puzzle-grid">
-                <div class="puzzle-piece"></div>
-                <div class="puzzle-piece"></div>
-                <div class="puzzle-piece"></div>
-                <div class="puzzle-piece"></div>
-                <div class="puzzle-piece"></div>
-                <div class="puzzle-piece"></div>
-                <div class="puzzle-piece"></div>
-                <div class="puzzle-piece"></div>
-                <div class="puzzle-piece"></div>
-              </div>
+
+            </div>
+            <div class="description">
+                <div class="my-motto">
+                    <p>코딩은 마치 퍼즐게임을 하는 것 같습니다. 다 맞추었을 때 짜릿한 쾌감이 있습니다.</p>
+                    <p>하지만 코딩은 퍼즐게임과 달리 게임 오버가 없습니다..</p><br/>
+                    <b>성공할 때 까지 시도하면 안되는 건 없다고 생각합니다!</b>
+                </div>
+                <div class="skill-level">
+                    <h2>테스트테스트</h2>
+                    <ul>
+                        <li class="html-skill">웹 페이지의 구조를 잘 이해하고 구성할 수 있습니다.</li>
+                        <li class="html-skill">웹 표준 태그를 활용하여 웹 문서의 의도를 명확히 표현할 수 있습니다.</li>
+                        <li class="html-skill"></li>
+                        <li class="css-skill">선택자와 속성을 잘 이해하고 페이지의 레이아웃을 구성하고 웹 페이지를 스타일링할 수 있습니다.</li>
+                        <li class="css-skill">미디어 쿼리를 활용하여 반응형 디자인을 구현할 수 있습니다.</li>
+                        <li class="css-skill"></li>
+                        <li class="js-skill">자바스크립트의 문법(변수, 함수, 조건문, 반복문 등)에 익숙합니다.</li>
+                        <li class="js-skill">웹 페이지에서 발생하는 이벤트, 알고리즘들을 문법을 활용하여 잘 처리할 수 있습니다.</li>
+                        <li class="js-skill"></li>
+                        <li class="jquery-skill">제이쿼리를 사용하여 이벤트들을 처리하고 요소간의 상호작용을 구현할 수 있습니다.</li>
+                        <li class="jquery-skill">제이쿼리를 활용한 애니메이션을 처리할 수 있습니다.</li>
+                        <li class="jquery-skill"></li>
+                        <li class="sass-skill">SASS 문법으로 스타일링을 수행할 수 있습니다.</li>
+                        <li class="sass-skill">재사용 가능한 블록을 생성하고, 내장된 문법을 통해 프로젝트의 효율성을 향상시킬 수 있습니다.</li>
+                        <li class="sass-skill"></li>
+                        <li class="parcel-skill">번들러의 기능을 이해하고 parcel 환경에서 개발할 수 있습니다.</li>
+                        <li class="parcel-skill">parcel을 활용해 보다 신속한 개발과 디버깅을 할 수 있습니다.</li>
+                        <li class="parcel-skill"></li>
+                        <li class="react-skill">재사용가능한 컴포넌트를 만들어 효율적인 렌더링을 할 수 있습니다</li>
+                        <li class="react-skill">Redux를 활용하여 상태변화를 추적하고 관리할 수 있습니다.</li>
+                        <li class="react-skill"></li>
+                    </ul>
+                </div>
+                <div class="skill-tree">
+                    <div class="skill-img"><img src="./img/html.png" alt="html-img"></div>
+                    <div class="skill-img"><img src="./img/css.png" alt="css-img"></div>
+                    <div class="skill-img"><img src="./img/javascript.png" alt="js-img"></div>
+                    <div class="skill-img"><img src="./img/jquery.png" alt="jquery-img"></div>
+                    <div class="skill-img"><img src="./img/sass.png" alt="sass-img"></div>
+                    <div class="skill-img"><img src="./img/parcel.png" alt="parcel-img"></div>
+                    <div class="skill-img"><img src="./img/react.png" alt="react-img"></div>
+                </div>
+            </div>
+
+
         </section>
+
+        
+
+
 
 
     </div>
 </body>
+
 </html>

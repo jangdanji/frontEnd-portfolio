@@ -1,79 +1,148 @@
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 li {
-  list-style: none; }
+  list-style: none;
+}
+
+span, p, b, h1, h2, h3, h4, h5, h6, ul, li {
+  color: white;
+}
 
 .container {
   width: 100%;
   height: 2000px;
   background-color: #1766FF;
-  position: relative; }
-  .container .header {
-    width: 1320px;
-    margin: 0 auto; }
-    .container .header ul {
-      position: fixed;
-      top: 20px;
-      z-index: 10;
-      background-color: white;
-      padding: 10px;
-      border-radius: 10px;
-      font-weight: bold; }
-      .container .header ul li {
-        padding: 10px 0;
-        display: inline-block;
-        margin: 0 10px;
-        cursor: pointer; }
-        .container .header ul li:hover {
-          text-decoration: underline; }
-  .container section {
-    width: 1320px;
-    margin: 0 auto; }
-  .container .intro {
-    height: 100vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center; }
-    .container .intro .profilePhoto {
-      width: 600px;
-      height: 240px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      position: relative; }
-      .container .intro .profilePhoto .photoBox {
-        display: flex;
-        position: absolute;
-        left: -200px; }
-        .container .intro .profilePhoto .photoBox img {
-          width: 200px;
-          height: 200px;
-          object-fit: cover;
-          border-radius: 20px;
-          display: block; }
-    .container .intro .profileMsg {
-      color: white;
-      font-size: 36px;
-      line-height: 60px;
-      letter-spacing: -4px;
-      font-weight: bold;
-      text-align: center; }
-      .container .intro .profileMsg .motto {
-        overflow: hidden;
-        position: relative;
-        height: 60px; }
-  .container .skills .puzzle-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 10px;
-    width: 300px;
-    height: 300px; }
-  .container .skills .puzzle-piece {
-    background-color: #eaeaea;
-    border: 1px solid #999999; }
-
+  position: relative;
+}
+.container .header {
+  width: 1250px;
+  margin: 0 auto;
+}
+.container .header ul {
+  position: fixed;
+  top: 20px;
+  z-index: 10;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.container .header ul li {
+  padding: 10px 0;
+  color: black;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.container .header ul li:hover {
+  text-decoration: underline;
+}
+.container section {
+  width: 1250px;
+  margin: 0 auto;
+}
+.container .intro {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .intro .introAnimation {
+  width: 725px;
+  display: flex;
+  justify-content: center;
+}
+.container .intro .introAnimation .profilePhoto {
+  width: 600px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.container .intro .introAnimation .profilePhoto .photoBox {
+  display: flex;
+  position: absolute;
+  left: -200px;
+}
+.container .intro .introAnimation .profilePhoto .photoBox img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+.container .intro .profileMsg {
+  width: 525px;
+  color: white;
+  font-size: 36px;
+  line-height: 60px;
+  letter-spacing: -4px;
+  font-weight: bold;
+  text-align: center;
+}
+.container .intro .profileMsg .motto {
+  overflow: hidden;
+  position: relative;
+  height: 60px;
+}
+.container .skills {
+  display: flex;
+}
+.container .skills .puzzle-grid {
+  position: relative;
+  width: 410px;
+}
+.container .skills .puzzle-grid table {
+  border-collapse: collapse;
+}
+.container .skills .puzzle-grid table tr td {
+  border: 1px solid white;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.1s;
+}
+.container .skills .puzzle-grid table tr td.active {
+  background-color: white;
+  color: black;
+  border-color: #ccc;
+}
+.container .skills .description {
+  width: 840px;
+}
+.container .skills .description .my-motto {
+  text-align: center;
+}
+.container .skills .description .skill-level {
+  margin-top: 30px;
+}
+.container .skills .description .skill-level ul {
+  height: 120px;
+}
+.container .skills .description .skill-level ul li {
+  list-style-type: circle;
+}
+.container .skills .description .skill-tree {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.container .skills .description .skill-tree .skill-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.container .skills .description .skill-tree img {
+  width: 100%;
+  object-fit: cover;
+}
 
 /*# sourceMappingURL=/style.6b54f5b7.css.map */

@@ -1,6 +1,7 @@
 *{padding:0; margin:0;}
 
 li{list-style: none;}
+span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
 
 
 
@@ -11,10 +12,8 @@ li{list-style: none;}
     position: relative;
 
     .header{
-        width: 1320px;
+        width: 1250px;
         margin: 0 auto;
-        
-    
         ul{
             position: fixed; top: 20px;
             z-index: 10;
@@ -22,9 +21,11 @@ li{list-style: none;}
             padding: 10px;
             border-radius: 10px;
             font-weight: bold;
+
     
             li{
                 padding: 10px 0;
+                color: black;
                 display: inline-block;
                 margin: 0 10px;
                 cursor: pointer;
@@ -37,40 +38,45 @@ li{list-style: none;}
     }
 
     section{
-        width: 1320px;
+        width: 1250px;
         margin: 0 auto;
     }
-    
-
-
 
     .intro{
         height: 100vh;
         display: flex; justify-content: space-evenly;
         align-items: center;
-        
 
-        .profilePhoto{
-            width: 600px; height: 240px;
-            display: flex; align-items: center;
-            
-            overflow: hidden;
-            position: relative;
+        .introAnimation{
+            width: 725px;
+            display: flex;
+            justify-content: center;
 
-            .photoBox{
-                display: flex;
-                position: absolute;
-                left: -200px;
-
-                img{
-                    width: 200px; height: 200px;
-                    object-fit: cover; border-radius: 20px;
-                    display: block;
+            .profilePhoto{
+                width: 600px; height: 240px;
+                display: flex; align-items: center;
+                
+                overflow: hidden;
+                position: relative;
+    
+                .photoBox{
+                    display: flex;
+                    position: absolute;
+                    left: -200px;
+    
+                    img{
+                        width: 200px; height: 200px;
+                        object-fit: cover; border-radius: 20px;
+                        display: block;
+                    }
                 }
             }
         }
+        
+
 
         .profileMsg{
+            width: 525px;
             color: white;
             font-size: 36px; line-height: 60px;
             letter-spacing: -4px;
@@ -80,25 +86,66 @@ li{list-style: none;}
             .motto{
                 overflow: hidden;
                 position: relative;
-                // border: 1px solid black;
                 height: 60px;
             }
         }
     }
 
     .skills{
+
+        display: flex;
+
         .puzzle-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            grid-gap: 10px;
-            width: 300px;
-            height: 300px;
-          }
+            position: relative;
+            // display: flex; justify-content: center;
+            width: 410px;
+            table{
+                border-collapse: collapse; 
+                tr{
+                    td{
+                        border: 1px solid white;
+                        width: 35px; height: 35px;
+                        text-align: center;
+                        color: white;
+                        cursor: pointer;
+                        text-transform: uppercase;
+                        transition: 0.1s;
+                    }
+                    td.active{
+                        background-color: white;
+                        color: black;
+                        border-color: #ccc;
+                    }
+                }
+            }
+        }
+
+        .description{
+            width: 840px;
+            .my-motto{
+                text-align: center;
+            }
+            .skill-level{
+                margin-top: 30px;
+                ul{
+                    height: 120px;
+                    li{list-style-type: circle;}
+                }
+            }
+            .skill-tree{
+                display: flex; justify-content: space-between;
+                margin: 20px 0;
+                .skill-img{
+                    display: flex; justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                }
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
           
-          .puzzle-piece {
-            background-color: #eaeaea;
-            border: 1px solid #999999;
-          }
     }
 }

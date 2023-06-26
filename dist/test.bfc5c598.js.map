@@ -1,0 +1,1 @@
+{"version":3,"sources":["js/test.js"],"names":["list","console","log","split"],"mappings":"AAEA,IAAMA,IAAI,GAAG,aAAa;AAE1BC,OAAO,CAACC,GAAG,CAACF,IAAI,CAACG,KAAK,CAAC,GAAG,CAAC,CAAC","file":"test.bfc5c598.js","sourceRoot":"..","sourcesContent":["\r\n\r\nconst list = 'aaa,aaa,bbb'\r\n\r\nconsole.log(list.split(','))"]}
