@@ -47,8 +47,6 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li {
 .container .intro {
   height: 100vh;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
 }
 .container .intro .introAnimation {
   width: 725px;
@@ -58,6 +56,7 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li {
 .container .intro .introAnimation .profilePhoto {
   width: 600px;
   height: 240px;
+  margin: auto 0;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -77,12 +76,17 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li {
 }
 .container .intro .profileMsg {
   width: 525px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   font-size: 36px;
   line-height: 60px;
   letter-spacing: -4px;
   font-weight: bold;
   text-align: center;
+  margin: auto 0;
 }
 .container .intro .profileMsg .motto {
   overflow: hidden;
@@ -91,8 +95,10 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li {
 }
 .container .skills {
   display: flex;
+  height: 100vh;
 }
 .container .skills .puzzle-grid {
+  margin: auto 0;
   position: relative;
   width: 410px;
 }
@@ -116,18 +122,26 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li {
 }
 .container .skills .description {
   width: 840px;
+  margin: auto 0;
 }
 .container .skills .description .my-motto {
   text-align: center;
+  font-size: 18px;
 }
 .container .skills .description .skill-level {
-  margin-top: 30px;
+  margin-top: 50px;
+}
+.container .skills .description .skill-level h2 {
+  margin: 20px 0;
+  text-transform: uppercase;
 }
 .container .skills .description .skill-level ul {
-  height: 120px;
+  height: 80px;
 }
 .container .skills .description .skill-level ul li {
   list-style-type: circle;
+  display: none;
+  margin-left: 20px;
 }
 .container .skills .description .skill-tree {
   display: flex;
@@ -139,10 +153,47 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  position: relative;
+  width: 70px;
 }
-.container .skills .description .skill-tree img {
+.container .skills .description .skill-tree .skill-img .icon-active {
+  position: absolute;
+  top: -25px;
+  font-size: 10px;
+  color: white;
+  opacity: 0;
+  transition: 0.1s;
+}
+.container .skills .description .skill-tree .skill-img img {
   width: 100%;
   object-fit: cover;
+  transition: 0.1s;
+}
+.container .skills .description .skill-tree .skill-img img:hover {
+  scale: 1.1;
+}
+.container .profile {
+  display: flex;
+  align-items: center;
+  height: 50vh;
+}
+.container .profile .profile-img {
+  width: 200px;
+  margin-right: 10px;
+  height: 200px;
+  border: 1px solid white;
+}
+.container .profile .profile-personal {
+  width: 515px;
+  margin-right: 10px;
+  line-height: 30px;
+}
+.container .profile .profile-personal p {
+  margin-left: 50px;
+}
+.container .profile .profile-career {
+  width: 515px;
+  line-height: 30px;
 }
 
 /*# sourceMappingURL=/style.6b54f5b7.css.map */

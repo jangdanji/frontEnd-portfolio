@@ -117,89 +117,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/picAnimation.js":[function(require,module,exports) {
-var myImgBox = document.querySelector('.profilePhoto .photoBox');
-for (var i = 1; i < 4; i++) {
-  var myImg = document.createElement('img');
-  myImg.setAttribute('src', "./img/img_0".concat(i, ".jpg"));
-  myImg.style.left = "".concat((i - 1) * 250, "px");
-  myImg.style.scale = '0';
-  myImgBox.appendChild(myImg);
+})({"js/common.js":[function(require,module,exports) {
+function setMobileViewportHeight() {
+  var vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
 }
-var clone = myImgBox.children[0];
-clone = clone.cloneNode(true);
-myImgBox.append(clone);
-gsap.to($('.photoBox img'), {
-  scale: 1,
-  filter: 'brightness(30%)',
-  opacity: 0.8
-});
-gsap.to($('.photoBox img:nth-child(3)'), {
-  scale: 1.2,
-  zIndex: 2,
-  filter: 'brightness(100%)',
-  opacity: 1
-});
-function introAnimate() {
-  /* 사진 */
-  gsap.to($('.photoBox'), {
-    left: 0,
-    /* 기본 상태는 -200px */
-    onComplete: function onComplete() {
-      gsap.to($('.photoBox'), {
-        left: -200,
-        duration: 0
-      });
+window.addEventListener('resize', setMobileViewportHeight);
+var bgImgTarget = document.querySelector('.profileMsg');
 
-      /* 마지막 사진을 remove한 뒤의 마지막 사진을 clone해서 맨 앞에다가 갖다 붙이기 */
-      $('.photoBox img:last-child').remove();
-      var lastPic = $('.photoBox img:last-child');
-      lastPic = lastPic.clone();
-      $('.photoBox').prepend(lastPic);
-    }
-  });
-  gsap.to($('.photoBox img'), {
-    filter: 'brightness(30%)',
-    opacity: 0.8
-  });
-  gsap.to($('.photoBox img:nth-child(2)'), {
-    scale: 1.2,
-    zIndex: 3,
-    filter: 'brightness(100%)',
-    opacity: 1
-  }); /* top */
-  gsap.to($('.photoBox img:nth-child(3)'), {
-    scale: 1.0,
-    zIndex: 2
-  });
-
-  /* dots */
-
-  /* 텍스트 */
-  gsap.to($('.profileMsg .motto div'), {
-    top: 0,
-    onComplete: function onComplete() {
-      gsap.to($('.profileMsg .motto div'), {
-        top: '-60px',
-        duration: 0
-      });
-      var lastMotto = $('.profileMsg .motto div > p:last-child');
-      lastMotto = lastMotto.clone();
-      $('.profileMsg .motto div').prepend(lastMotto);
-      $('.profileMsg .motto div p:last-child').remove();
-    }
-  });
-}
-var textMachine = document.querySelector('.profileMsg .motto');
-var text = document.createElement('div');
-text.style.position = 'absolute';
-text.style.width = '100%';
-text.style.top = '-60px';
-text.innerHTML = "\n    <p>\uBB34\uD55C\uD55C \uAC00\uB2A5\uC131\uC744 \uAC00\uC9C4</p>\n    <p>\uC131\uACF5\uD560 \uB54C\uAE4C\uC9C0 \uB3C4\uC804\uD558\uB294</p>\n    <p>\uD55C\uACC4\uB97C \uB6F0\uC5B4\uB118\uB294</p>\n";
-textMachine.append(text);
-setInterval(function () {
-  introAnimate();
-}, 2000);
+// bgImgTarget.style.backgroundImage = 'url(./img/background.jpg)'
+// bgImgTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -369,5 +296,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/picAnimation.js"], null)
-//# sourceMappingURL=/picAnimation.09c14a1c.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/common.js"], null)
+//# sourceMappingURL=/common.baa7053c.js.map

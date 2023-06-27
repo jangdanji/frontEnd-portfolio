@@ -3,8 +3,6 @@ var _ = require('lodash');
 /* 테이블 만들기 */
 const puzzle = document.querySelector('.puzzle-grid')
 const table = document.createElement('table')
-const tr = document.createElement('tr')
-const td = document.createElement('td')
 
 for (let i = 1; i <= 10; i++){
 
@@ -63,6 +61,9 @@ allTd.forEach((td) => {
 
 function findSolo(clickClass, allClass) {
 
+    allClass = _.without(allClass, 'word')
+    allClass = _.without(allClass, 'active')
+
     let active = _.countBy(allClass) /* 카운트 세기 */
     active = _.pickBy(active, value => value > 1) /* 젤 많이 있는거 찾기 (active 상태인것) */
     active = _.keys(active)[0] /* 변수화 */
@@ -72,8 +73,20 @@ function findSolo(clickClass, allClass) {
     return notActive
 }
 
+function findActived(allClass) {
 
-/* 클릭하면 강조 활성화 */
+    allClass = _.without(allClass, 'word')
+    allClass = _.without(allClass, 'active')
+
+    let active = _.countBy(allClass) /* 카운트 세기 */
+    active = _.pickBy(active, value => value > 1) /* 젤 많이 있는거 찾기 (active 상태인것) */
+    active = _.keys(active)[0] /* 변수화 */
+
+    return active
+}
+
+
+/* 퍼즐을 클릭!! 하면 강조 활성화 및 기술 탭 클릭 */
 const wordTd = document.querySelectorAll('.puzzle-grid table td.word')
 wordTd.forEach((td) => {
     td.addEventListener('click', function(){
@@ -84,12 +97,10 @@ wordTd.forEach((td) => {
         className = className.split(' ')
 
         let targetClass = className[0]
-        
 
         if ($(td).hasClass('active') && className.length > 1) {
 
             const findActive = document.querySelectorAll('td.active')
-
             let activeTds = []
 
             findActive.forEach((active) => {
@@ -98,19 +109,77 @@ wordTd.forEach((td) => {
             })
             
             activeTds = activeTds.filter((value) => value !== 'active' && value !== 'word') 
-
             targetClass = findSolo(className, activeTds)
         }
 
         wordTd.forEach((td) => td.classList.remove('active')) /* 초기화 */
-
         const targetTd = document.querySelectorAll(`.puzzle-grid table .${targetClass}`)
         targetTd.forEach((td) => {
             $(td).toggleClass('active')
-
-            
         })
     })
 })
 
-const mySkills = document.querySelector('.skill-tree')
+const mySkillsImg = document.querySelectorAll('.skill-tree .skill-img img')
+
+const mySkillClasses = document.querySelectorAll('.skill-level ul li');
+let SkillClass = Array.from(mySkillClasses).map((li) => li.getAttribute('class'));
+SkillClass = _.uniq(SkillClass)
+// ['html-skill', 'css-skill', 'js-skill', 'jquery-skill', 'sass-skill', 'parcel-skill', 'react-skill']
+
+mySkillsImg.forEach((img) => { /* 활성화 dot 넣기 */
+    const dot = document.createElement('div')
+    dot.setAttribute('class', 'icon-active')
+    dot.innerHTML = '<i class="fas fa-circle"></i>'
+    img.parentElement.appendChild(dot)
+})
+
+const allDots = document.querySelectorAll('.icon-active')
+const skillTitle = document.querySelector('.skill-level h2')
+
+
+/* 탭 이미지를 클릭!! 하면 퍼즐 activate */
+mySkillsImg.forEach((img, index) => {
+    img.addEventListener('click', function(){
+        mySkillClasses.forEach(li => li.style.display = 'none') /* 초기화 */
+        allDots.forEach(dot => dot.style.opacity = '0') /* dot 초기화 */
+
+        const targetClass = document.querySelectorAll(`.skill-level ul li.${SkillClass[index]}`)
+        targetClass.forEach(li => li.style.display = 'list-item')
+
+        let thisClass = img.getAttribute('id')
+        thisClass = thisClass.replace('-img', '')
+
+        wordTd.forEach((td) => td.classList.remove('active')) /* 초기화 */
+        const targetTd = document.querySelectorAll(`.puzzle-grid table .${thisClass}`)
+        targetTd.forEach((td) => $(td).toggleClass('active'))
+
+        img.nextSibling.style.opacity = '1'
+
+        skillTitle.textContent = `${thisClass} 숙련도`
+
+    })
+})
+
+wordTd.forEach((td) => {
+    td.addEventListener('click', function(){
+
+        const findActive = document.querySelectorAll('td.active')
+        let activeTds = []
+
+        findActive.forEach((active) => {
+            const classNames = active.getAttribute('class').split(' ')
+            activeTds.push(...classNames)
+        })
+
+        const activated = findActived(activeTds)
+        const targetImg = document.getElementById(`${activated}-img`)
+        // console.log(targetImg)
+
+        targetImg.click()
+    })
+})
+
+
+/* 기본 */
+mySkillsImg[0].click()

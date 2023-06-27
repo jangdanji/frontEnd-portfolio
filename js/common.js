@@ -4,3 +4,8 @@ function setMobileViewportHeight() {
 }
 
 window.addEventListener('resize', setMobileViewportHeight);
+
+const bgImgTarget = document.querySelector('.profileMsg')
+
+// bgImgTarget.style.backgroundImage = 'url(./img/background.jpg)'
+// bgImgTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'

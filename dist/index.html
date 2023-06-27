@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/style.6b54f5b7.css">
 
     <!-- js -->
+    <script src="/common.baa7053c.js" defer=""></script>
     <script src="/picAnimation.09c14a1c.js" defer=""></script>
     <script src="/puzzleMaker.7afe59cc.js" defer=""></script>
     <script src="/test.bfc5c598.js" defer=""></script>
@@ -19,6 +20,9 @@
 
     <!-- gsap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+
+    <!-- font awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
 
 <script src="/style.6b54f5b7.js"></script></head>
 
@@ -47,9 +51,11 @@
             </div>
 
             <div class="profileMsg">
-                <p>안녕하세요 김나단입니다!</p>
-                <div class="motto"></div>
-                <p>개발자가 되고 싶습니다!</p>
+                <div class="msg">
+                    <p>안녕하세요 김나단입니다!</p>
+                    <div class="motto"></div>
+                    <p>개발자가 되고 싶습니다!</p>
+                </div>
             </div>
         </section>
 
@@ -64,43 +70,54 @@
                     <b>성공할 때 까지 시도하면 안되는 건 없다고 생각합니다!</b>
                 </div>
                 <div class="skill-level">
-                    <h2>테스트테스트</h2>
+                    <h2>숙련도</h2>
                     <ul>
                         <li class="html-skill">웹 페이지의 구조를 잘 이해하고 구성할 수 있습니다.</li>
                         <li class="html-skill">웹 표준 태그를 활용하여 웹 문서의 의도를 명확히 표현할 수 있습니다.</li>
-                        <li class="html-skill"></li>
                         <li class="css-skill">선택자와 속성을 잘 이해하고 페이지의 레이아웃을 구성하고 웹 페이지를 스타일링할 수 있습니다.</li>
                         <li class="css-skill">미디어 쿼리를 활용하여 반응형 디자인을 구현할 수 있습니다.</li>
-                        <li class="css-skill"></li>
                         <li class="js-skill">자바스크립트의 문법(변수, 함수, 조건문, 반복문 등)에 익숙합니다.</li>
                         <li class="js-skill">웹 페이지에서 발생하는 이벤트, 알고리즘들을 문법을 활용하여 잘 처리할 수 있습니다.</li>
-                        <li class="js-skill"></li>
                         <li class="jquery-skill">제이쿼리를 사용하여 이벤트들을 처리하고 요소간의 상호작용을 구현할 수 있습니다.</li>
                         <li class="jquery-skill">제이쿼리를 활용한 애니메이션을 처리할 수 있습니다.</li>
-                        <li class="jquery-skill"></li>
                         <li class="sass-skill">SASS 문법으로 스타일링을 수행할 수 있습니다.</li>
                         <li class="sass-skill">재사용 가능한 블록을 생성하고, 내장된 문법을 통해 프로젝트의 효율성을 향상시킬 수 있습니다.</li>
-                        <li class="sass-skill"></li>
                         <li class="parcel-skill">번들러의 기능을 이해하고 parcel 환경에서 개발할 수 있습니다.</li>
                         <li class="parcel-skill">parcel을 활용해 보다 신속한 개발과 디버깅을 할 수 있습니다.</li>
-                        <li class="parcel-skill"></li>
                         <li class="react-skill">재사용가능한 컴포넌트를 만들어 효율적인 렌더링을 할 수 있습니다</li>
                         <li class="react-skill">Redux를 활용하여 상태변화를 추적하고 관리할 수 있습니다.</li>
-                        <li class="react-skill"></li>
                     </ul>
                 </div>
                 <div class="skill-tree">
-                    <div class="skill-img"><img src="/html.259bd246.png" alt="html-img"></div>
-                    <div class="skill-img"><img src="/css.c6bb7add.png" alt="css-img"></div>
-                    <div class="skill-img"><img src="/javascript.9e8a4bb1.png" alt="js-img"></div>
-                    <div class="skill-img"><img src="/jquery.31b29b09.png" alt="jquery-img"></div>
-                    <div class="skill-img"><img src="/sass.e4fb3350.png" alt="sass-img"></div>
-                    <div class="skill-img"><img src="/parcel.cdbaceda.png" alt="parcel-img"></div>
-                    <div class="skill-img"><img src="/react.aaaa006e.png" alt="react-img"></div>
+                    <div class="skill-img"><img src="/html.259bd246.png" id="html-img" alt="html-img"></div>
+                    <div class="skill-img"><img src="/css.c6bb7add.png" id="css-img" alt="css-img"></div>
+                    <div class="skill-img"><img src="/javascript.9e8a4bb1.png" id="javascript-img" alt="javascript-img"></div>
+                    <div class="skill-img"><img src="/jquery.31b29b09.png" id="jquery-img" alt="jquery-img"></div>
+                    <div class="skill-img"><img src="/sass.e4fb3350.png" id="sass-img" alt="sass-img"></div>
+                    <div class="skill-img"><img src="/parcel.cdbaceda.png" id="parcel-img" alt="parcel-img"></div>
+                    <div class="skill-img"><img src="/react.aaaa006e.png" id="react-img" alt="react-img"></div>
                 </div>
             </div>
+        </section>
 
-
+        <section class="profile">
+            <div class="profile-img">
+                <img src="" alt="">
+            </div>
+            <div class="profile-personal">
+                <p>김나단</p>
+                <p>백석예술대학교 실용음악학부 졸업</p>
+                <p>부산광역시 부산진구 거주</p>
+                <p>1996. 02. 24.</p>
+                <p>010 6596 6572</p>
+                <p>defmaybe69@gmail.com</p>
+            </div>
+            <div class="profile-career">
+                <p>2022-12-30 - 2023-07-14</p>
+                <p>프론트엔드 개발자(자바스크립트, React)양성과정</p>
+                <p>2019-09-23 - 2020-02-19</p>
+                <p>디지털컨버전스 머신러닝 플랫폼 응용SW엔지니어링 구직자 과정</p>
+            </div>
         </section>
 
         

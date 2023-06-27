@@ -19382,15 +19382,13 @@ var _ = require('lodash');
 /* 테이블 만들기 */
 var puzzle = document.querySelector('.puzzle-grid');
 var table = document.createElement('table');
-var tr = document.createElement('tr');
-var td = document.createElement('td');
 for (var i = 1; i <= 10; i++) {
-  var _tr = document.createElement('tr');
+  var tr = document.createElement('tr');
   for (var j = 1; j <= 9; j++) {
-    var _td = document.createElement('td');
-    _tr.appendChild(_td);
+    var td = document.createElement('td');
+    tr.appendChild(td);
   }
-  table.appendChild(_tr);
+  table.appendChild(tr);
 }
 puzzle.appendChild(table);
 
@@ -19451,6 +19449,8 @@ allTd.forEach(function (td) {
 /* findSolo는 active되지 못한 퍼즐의 클래스명을 찾아줌 */
 
 function findSolo(clickClass, allClass) {
+  allClass = _.without(allClass, 'word');
+  allClass = _.without(allClass, 'active');
   var active = _.countBy(allClass); /* 카운트 세기 */
   active = _.pickBy(active, function (value) {
     return value > 1;
@@ -19463,8 +19463,19 @@ function findSolo(clickClass, allClass) {
 
   return notActive;
 }
+function findActived(allClass) {
+  allClass = _.without(allClass, 'word');
+  allClass = _.without(allClass, 'active');
+  var active = _.countBy(allClass); /* 카운트 세기 */
+  active = _.pickBy(active, function (value) {
+    return value > 1;
+  }); /* 젤 많이 있는거 찾기 (active 상태인것) */
+  active = _.keys(active)[0]; /* 변수화 */
 
-/* 클릭하면 강조 활성화 */
+  return active;
+}
+
+/* 퍼즐을 클릭!! 하면 강조 활성화 및 기술 탭 클릭 */
 var wordTd = document.querySelectorAll('.puzzle-grid table td.word');
 wordTd.forEach(function (td) {
   td.addEventListener('click', function () {
@@ -19489,14 +19500,75 @@ wordTd.forEach(function (td) {
     wordTd.forEach(function (td) {
       return td.classList.remove('active');
     }); /* 초기화 */
-
     var targetTd = document.querySelectorAll(".puzzle-grid table .".concat(targetClass));
     targetTd.forEach(function (td) {
       $(td).toggleClass('active');
     });
   });
 });
-var mySkills = document.querySelector('.skill-tree');
+var mySkillsImg = document.querySelectorAll('.skill-tree .skill-img img');
+var mySkillClasses = document.querySelectorAll('.skill-level ul li');
+var SkillClass = Array.from(mySkillClasses).map(function (li) {
+  return li.getAttribute('class');
+});
+SkillClass = _.uniq(SkillClass);
+// ['html-skill', 'css-skill', 'js-skill', 'jquery-skill', 'sass-skill', 'parcel-skill', 'react-skill']
+
+mySkillsImg.forEach(function (img) {
+  /* 활성화 dot 넣기 */
+  var dot = document.createElement('div');
+  dot.setAttribute('class', 'icon-active');
+  dot.innerHTML = '<i class="fas fa-circle"></i>';
+  img.parentElement.appendChild(dot);
+});
+var allDots = document.querySelectorAll('.icon-active');
+var skillTitle = document.querySelector('.skill-level h2');
+
+/* 탭 이미지를 클릭!! 하면 퍼즐 activate */
+mySkillsImg.forEach(function (img, index) {
+  img.addEventListener('click', function () {
+    mySkillClasses.forEach(function (li) {
+      return li.style.display = 'none';
+    }); /* 초기화 */
+    allDots.forEach(function (dot) {
+      return dot.style.opacity = '0';
+    }); /* dot 초기화 */
+
+    var targetClass = document.querySelectorAll(".skill-level ul li.".concat(SkillClass[index]));
+    targetClass.forEach(function (li) {
+      return li.style.display = 'list-item';
+    });
+    var thisClass = img.getAttribute('id');
+    thisClass = thisClass.replace('-img', '');
+    wordTd.forEach(function (td) {
+      return td.classList.remove('active');
+    }); /* 초기화 */
+    var targetTd = document.querySelectorAll(".puzzle-grid table .".concat(thisClass));
+    targetTd.forEach(function (td) {
+      return $(td).toggleClass('active');
+    });
+    img.nextSibling.style.opacity = '1';
+    skillTitle.textContent = "".concat(thisClass, " \uC219\uB828\uB3C4");
+  });
+});
+wordTd.forEach(function (td) {
+  td.addEventListener('click', function () {
+    var findActive = document.querySelectorAll('td.active');
+    var activeTds = [];
+    findActive.forEach(function (active) {
+      var classNames = active.getAttribute('class').split(' ');
+      activeTds.push.apply(activeTds, _toConsumableArray(classNames));
+    });
+    var activated = findActived(activeTds);
+    var targetImg = document.getElementById("".concat(activated, "-img"));
+    // console.log(targetImg)
+
+    targetImg.click();
+  });
+});
+
+/* 기본 */
+mySkillsImg[0].click();
 },{"lodash":"node_modules/lodash/lodash.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -19522,7 +19594,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54623" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58197" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

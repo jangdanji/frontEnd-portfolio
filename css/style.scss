@@ -44,8 +44,7 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
 
     .intro{
         height: 100vh;
-        display: flex; justify-content: space-evenly;
-        align-items: center;
+        display: flex;
 
         .introAnimation{
             width: 725px;
@@ -54,6 +53,7 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
 
             .profilePhoto{
                 width: 600px; height: 240px;
+                margin: auto 0;
                 display: flex; align-items: center;
                 
                 overflow: hidden;
@@ -76,12 +76,14 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
 
 
         .profileMsg{
-            width: 525px;
+            width: 525px; height: 100%;
+            display: flex; align-items: center; justify-content: center;
             color: white;
             font-size: 36px; line-height: 60px;
             letter-spacing: -4px;
             font-weight: bold;
             text-align: center;
+            margin: auto 0;
 
             .motto{
                 overflow: hidden;
@@ -92,10 +94,10 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
     }
 
     .skills{
-
         display: flex;
-
+        height: 100vh;
         .puzzle-grid {
+            margin: auto 0;
             position: relative;
             // display: flex; justify-content: center;
             width: 410px;
@@ -121,15 +123,23 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
         }
 
         .description{
+            
             width: 840px;
+            margin: auto 0;
             .my-motto{
                 text-align: center;
+                font-size: 18px;
             }
             .skill-level{
-                margin-top: 30px;
+                margin-top: 50px;
+                h2{margin: 20px 0; text-transform: uppercase;}
                 ul{
-                    height: 120px;
-                    li{list-style-type: circle;}
+                    height: 80px;
+                    li{
+                        list-style-type: circle;
+                        display: none;
+                        margin-left: 20px;
+                    }
                 }
             }
             .skill-tree{
@@ -139,13 +149,48 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
                     display: flex; justify-content: center;
                     align-items: center;
                     cursor: pointer;
+                    position: relative;
+                    width: 70px;
+
+                    .icon-active{
+                        position: absolute; top: -25px;
+                        font-size: 10px; color: white;
+                        opacity: 0;
+                        transition: 0.1s;
+                    }
+                    img{
+                        width: 100%;
+                        object-fit: cover;
+                        transition: 0.1s;
+                        &:hover{scale:1.1;}
+                    }
                 }
-                img{
-                    width: 100%;
-                    object-fit: cover;
-                }
+
             }
         }
           
+    }
+
+    .profile{
+        display: flex; align-items: center;
+        height: 50vh;
+
+        .profile-img{
+            width: 200px; margin-right: 10px;
+            height: 200px;
+            border: 1px solid white;
+        }
+        .profile-personal{
+            width: 515px; margin-right: 10px;
+            // padding-left: 30px;
+            line-height: 30px;
+            p{
+                margin-left: 50px;
+            }
+        }
+        .profile-career{
+            width: 515px;
+            line-height: 30px;
+        }
     }
 }
