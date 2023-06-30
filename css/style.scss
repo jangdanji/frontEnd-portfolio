@@ -1,14 +1,15 @@
 *{padding:0; margin:0;}
 
 li{list-style: none;}
-span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
 
-
-
+$color1 : #2D4356;
+$color2 : #435B66;
+$color3 : #A76F6F;
+$color4 : #EAB2A0;
 
 .container{
-    width: 100%; height: 2000px;
-    background-color: #1766FF;
+    width: 100%;
+    background-color: $color1;
     position: relative;
 
     .header{
@@ -16,7 +17,7 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
         margin: 0 auto;
         ul{
             position: fixed; top: 20px;
-            z-index: 10;
+            z-index: 99999;
             background-color: rgba($color: white, $alpha: 1);
             padding: 10px;
             border-radius: 10px;
@@ -37,22 +38,27 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
     
     }
 
-    section{
+    .wrap{
         width: 1250px;
         margin: 0 auto;
     }
 
-    .intro{
+    .introduction{
         height: 100vh;
         display: flex;
+        color: white;
+        
 
         .introAnimation{
             width: 725px;
             display: flex;
             justify-content: center;
+            position: relative;
 
             .profilePhoto{
-                width: 600px; height: 240px;
+                width: 600px;
+                // height: 240px; 였지만 dots 때문에 늘려야됨 overflow: hidden 이거든
+                height: 340px;
                 margin: auto 0;
                 display: flex; align-items: center;
                 
@@ -62,7 +68,7 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
                 .photoBox{
                     display: flex;
                     position: absolute;
-                    left: -200px;
+                    left: -200px; z-index: 2;
     
                     img{
                         width: 200px; height: 200px;
@@ -70,25 +76,65 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
                         display: block;
                     }
                 }
+
+                .dots{
+                    position: absolute; bottom: 0; z-index: 2;
+                    width: 100%; text-align: center;
+                    font-size: 12px;
+                    .fa-circle{
+                        margin: 0 5px;
+                    }
+
+                }
+            }
+            .photo-back{
+                position: absolute;
+                width: 100%; height: 100%;
+
+                img{
+                    position: absolute; top:50%; left: 50%;
+                    width:525px; height:525px;
+                    z-index:0; transform: translate(-50%, -50%);
+                    object-fit: cover;
+                    opacity: 0;
+                    transition: 0.4s;
+                }
+                img.active{
+                    opacity: 1;
+                }
             }
         }
         
 
 
-        .profileMsg{
-            width: 525px; height: 100%;
-            display: flex; align-items: center; justify-content: center;
-            color: white;
+        .profile-msg{
+            width: 525px;
             font-size: 36px; line-height: 60px;
             letter-spacing: -4px;
             font-weight: bold;
             text-align: center;
-            margin: auto 0;
+            display: flex;
+            background-color: transparent;
+            position: relative;
+            
+            
+            .profile-msg-wrap{
+                width: 100%; height: 100%;
+                margin: auto 0;
+                .msg{
+                    width: 525px;
+                    position: absolute;
+                    z-index: 2;
+                    left: 50%; top: 50%;
+                    transform: translate(-50%, -50%);
 
-            .motto{
-                overflow: hidden;
-                position: relative;
-                height: 60px;
+                    .motto{
+                        overflow: hidden;
+                        position: relative;
+                        height: 60px;
+                        width: 100%;
+                    }
+                }
             }
         }
     }
@@ -96,30 +142,42 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
     .skills{
         display: flex;
         height: 100vh;
+        color: white;
         .puzzle-grid {
-            margin: auto 0;
-            position: relative;
+            // margin: auto 0;
             // display: flex; justify-content: center;
             width: 410px;
+            position: relative;
             table{
                 border-collapse: collapse; 
+                position: absolute; z-index: 10;
+                width: 324px; height: 360px; box-sizing: border-box;
+                top: 50%; transform: translateY(-50%);
+
+
                 tr{
-                    td{
+                    td.word{
                         border: 1px solid white;
                         width: 35px; height: 35px;
                         text-align: center;
-                        color: white;
                         cursor: pointer;
                         text-transform: uppercase;
                         transition: 0.1s;
+                        background-color: $color1;
                     }
                     td.active{
                         background-color: white;
                         color: black;
                         border-color: #ccc;
+                        // font-weight: bold;
                     }
                 }
             }
+            .puzzle-back{
+                position: absolute; top: 50%; transform: translate(-50%, -50%);
+                filter: blur(5px) brightness(70%);
+            }
+            
         }
 
         .description{
@@ -172,25 +230,103 @@ span, p, b, h1, h2, h3, h4, h5, h6, ul, li{color: white;}
     }
 
     .profile{
-        display: flex; align-items: center;
-        height: 50vh;
 
-        .profile-img{
-            width: 200px; margin-right: 10px;
-            height: 200px;
-            border: 1px solid white;
-        }
-        .profile-personal{
-            width: 515px; margin-right: 10px;
-            // padding-left: 30px;
-            line-height: 30px;
-            p{
-                margin-left: 50px;
+        background-color: $color4;
+        height: 50vh;
+        display: flex; align-items: center;
+        font-size: 17px;
+        
+        .my-profile{
+            display: flex; align-items: center;
+            
+
+            .profile-img{
+                width: 200px; margin-right: 10px;
+                height: 200px;
+                border: 1px solid white;
+            }
+            .profile-personal{
+                width: 515px; margin-right: 10px;
+                // padding-left: 30px;
+                line-height: 30px;
+                p{
+                    margin-left: 50px;
+                }
+            }
+            .profile-career{
+                width: 515px;
+                line-height: 30px;
             }
         }
-        .profile-career{
-            width: 515px;
-            line-height: 30px;
+    }
+
+    .projects{
+        background-color: $color3;
+
+        padding-top: 50px;
+        color: white;
+
+        .project{
+            .project-intro{
+                display: flex;
+                .info{
+                    width: 820px; margin-right: 10px;
+                    .title{
+                        img{
+                            width: 60px; height: 60px; margin-right: 20px;
+                        }
+                        display: flex;
+                        align-items: center;
+                        height: 60px; font-size: 20px;
+                    }
+                    .desc{
+                        margin-top: 20px;
+                        p{
+                            margin: 10px 0 0 20px;
+                        }
+                    }
+                }
+                .view-more{
+                    width: 410px;
+                    display: flex; flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-end;
+                    button{
+                        width: 250px; height: 40px;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+                        // border: 1px solid white;
+                        border: none;
+                        cursor: pointer;
+                        background-color: $color4; color: $color1;
+                        &:hover{background-color: #fff; color: black;}
+                    }
+                }
+            }
+            .project-content{
+                margin-top: 10px;
+                .content-intro{
+                    .video-main{
+                        width: 100%; height: 50vh;
+                        border-radius: 20px;
+                        border: 1px solid white;
+                    }
+                    .video-desc{
+                        margin-top: 30px;
+                        h2{margin: 10px 0;}
+                    }
+                }
+                .content-main{
+                    .swiper{
+                        width: 100%; height: 300px;
+                    }
+                }
+
+            }
+
+
         }
+
+
     }
 }

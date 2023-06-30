@@ -118,6 +118,7 @@ wordTd.forEach((td) => {
             $(td).toggleClass('active')
         })
     })
+
 })
 
 const mySkillsImg = document.querySelectorAll('.skill-tree .skill-img img')
@@ -161,6 +162,23 @@ mySkillsImg.forEach((img, index) => {
     })
 })
 
+/* 퍼즐의 뒷배경 */
+
+mySkillsImg.forEach((img) => {
+    img.addEventListener('click', function(){
+        const imgSrc = img.getAttribute('src')
+        const puzzleBack = document.querySelector('.puzzle-grid .puzzle-back')
+        puzzleBack.setAttribute('src', imgSrc)
+        
+        let tableWidth = document.querySelector('.puzzle-grid table')
+        tableWidth = getComputedStyle(table)
+        tableWidth = parseInt(tableWidth.width)
+
+        puzzleBack.style.left = `${tableWidth / 2}px`
+    })
+})
+
+/* 퍼즐 단어 클릭 */
 wordTd.forEach((td) => {
     td.addEventListener('click', function(){
 

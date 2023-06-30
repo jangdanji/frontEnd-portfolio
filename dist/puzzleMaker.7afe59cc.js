@@ -19551,6 +19551,22 @@ mySkillsImg.forEach(function (img, index) {
     skillTitle.textContent = "".concat(thisClass, " \uC219\uB828\uB3C4");
   });
 });
+
+/* 퍼즐의 뒷배경 */
+
+mySkillsImg.forEach(function (img) {
+  img.addEventListener('click', function () {
+    var imgSrc = img.getAttribute('src');
+    var puzzleBack = document.querySelector('.puzzle-grid .puzzle-back');
+    puzzleBack.setAttribute('src', imgSrc);
+    var tableWidth = document.querySelector('.puzzle-grid table');
+    tableWidth = getComputedStyle(table);
+    tableWidth = parseInt(tableWidth.width);
+    puzzleBack.style.left = "".concat(tableWidth / 2, "px");
+  });
+});
+
+/* 퍼즐 단어 클릭 */
 wordTd.forEach(function (td) {
   td.addEventListener('click', function () {
     var findActive = document.querySelectorAll('td.active');
@@ -19594,7 +19610,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58197" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53256" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

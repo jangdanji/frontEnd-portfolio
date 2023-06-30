@@ -6,15 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PORTFOLIO</title>
 
-    <!-- user -->
-    <link rel="stylesheet" href="./css/style.scss">
-
-    <!-- js -->
-    <script src="./js/common.js" defer></script>
-    <script src="./js/picAnimation.js" defer></script>
-    <script src="./js/puzzleMaker.js" defer></script>
-    <script src="./js/test.js" defer></script>
-
+        
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
@@ -23,6 +15,28 @@
 
     <!-- font awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/all.min.js"></script>
+
+    
+    <!-- user -->
+    <link rel="stylesheet" href="./css/style.scss">
+
+
+    <!-- js -->
+    <script src="./js/common.js" defer></script>
+    <script src="./js/picAnimation.js" defer></script>
+    <script src="./js/puzzleMaker.js" defer></script>
+    <script src="./js/test.js" defer></script>
+    <script src="./js/swiper.js" defer></script>
+
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+
 
 </head>
 
@@ -39,84 +53,158 @@
         </header>
 
         <section class="intro">
-            <div class="introAnimation">
-                <div class="profilePhoto">
-                    <div class="photoBox">
-    
+            <div class="introduction wrap">
+                <div class="introAnimation">
+                    <div class="profilePhoto">
+                        <div class="photoBox">
+        
+                        </div>
+                        <div class="dots">
+                            <i class="far fa-circle"></i><i class="far fa-circle"></i><i class="far fa-circle"></i>
+                        </div>
                     </div>
-                    <div class="dots">
+                    <div class="photo-back">
+                        
+                    </div>
+                </div>
     
+                <div class="profile-msg">
+                    <div class="profile-msg-wrap">
+                        <div class="msg">
+                            <p>안녕하세요 김나단입니다!</p>
+                            <div class="motto"></div>
+                            <p>개발자가 되고 싶습니다!</p>
+                        </div>
+                        <div class="msg-background">
+
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="profileMsg">
-                <div class="msg">
-                    <p>안녕하세요 김나단입니다!</p>
-                    <div class="motto"></div>
-                    <p>개발자가 되고 싶습니다!</p>
-                </div>
-            </div>
-        </section>
+            <div class="skills wrap">
+                <div class="puzzle-grid">
+                    
 
-        <section class="skills">
-            <div class="puzzle-grid">
-
-            </div>
-            <div class="description">
-                <div class="my-motto">
-                    <p>코딩은 마치 퍼즐게임을 하는 것 같습니다. 다 맞추었을 때 짜릿한 쾌감이 있습니다.</p>
-                    <p>하지만 코딩은 퍼즐게임과 달리 게임 오버가 없습니다..</p><br/>
-                    <b>성공할 때 까지 시도하면 안되는 건 없다고 생각합니다!</b>
+                    <img src="" alt="puzzle-bg-img" class="puzzle-back">
                 </div>
-                <div class="skill-level">
-                    <h2>숙련도</h2>
-                    <ul>
-                        <li class="html-skill">웹 페이지의 구조를 잘 이해하고 구성할 수 있습니다.</li>
-                        <li class="html-skill">웹 표준 태그를 활용하여 웹 문서의 의도를 명확히 표현할 수 있습니다.</li>
-                        <li class="css-skill">선택자와 속성을 잘 이해하고 페이지의 레이아웃을 구성하고 웹 페이지를 스타일링할 수 있습니다.</li>
-                        <li class="css-skill">미디어 쿼리를 활용하여 반응형 디자인을 구현할 수 있습니다.</li>
-                        <li class="js-skill">자바스크립트의 문법(변수, 함수, 조건문, 반복문 등)에 익숙합니다.</li>
-                        <li class="js-skill">웹 페이지에서 발생하는 이벤트, 알고리즘들을 문법을 활용하여 잘 처리할 수 있습니다.</li>
-                        <li class="jquery-skill">제이쿼리를 사용하여 이벤트들을 처리하고 요소간의 상호작용을 구현할 수 있습니다.</li>
-                        <li class="jquery-skill">제이쿼리를 활용한 애니메이션을 처리할 수 있습니다.</li>
-                        <li class="sass-skill">SASS 문법으로 스타일링을 수행할 수 있습니다.</li>
-                        <li class="sass-skill">재사용 가능한 블록을 생성하고, 내장된 문법을 통해 프로젝트의 효율성을 향상시킬 수 있습니다.</li>
-                        <li class="parcel-skill">번들러의 기능을 이해하고 parcel 환경에서 개발할 수 있습니다.</li>
-                        <li class="parcel-skill">parcel을 활용해 보다 신속한 개발과 디버깅을 할 수 있습니다.</li>
-                        <li class="react-skill">재사용가능한 컴포넌트를 만들어 효율적인 렌더링을 할 수 있습니다</li>
-                        <li class="react-skill">Redux를 활용하여 상태변화를 추적하고 관리할 수 있습니다.</li>
-                    </ul>
-                </div>
-                <div class="skill-tree">
-                    <div class="skill-img"><img src="./img/html.png" id="html-img" alt="html-img"></div>
-                    <div class="skill-img"><img src="./img/css.png" id="css-img" alt="css-img"></div>
-                    <div class="skill-img"><img src="./img/javascript.png" id="javascript-img" alt="javascript-img"></div>
-                    <div class="skill-img"><img src="./img/jquery.png" id="jquery-img" alt="jquery-img"></div>
-                    <div class="skill-img"><img src="./img/sass.png" id="sass-img" alt="sass-img"></div>
-                    <div class="skill-img"><img src="./img/parcel.png" id="parcel-img" alt="parcel-img"></div>
-                    <div class="skill-img"><img src="./img/react.png" id="react-img" alt="react-img"></div>
+                <div class="description">
+                    <div class="my-motto">
+                        <p>코딩은 마치 퍼즐게임을 하는 것 같습니다. 다 맞추었을 때 짜릿한 쾌감이 있습니다.</p>
+                        <p>하지만 코딩은 퍼즐게임과 달리 게임 오버가 없습니다..</p><br/>
+                        <b>성공할 때 까지 시도하면 안되는 건 없다고 생각합니다!</b>
+                    </div>
+                    <div class="skill-level">
+                        <h2>숙련도</h2>
+                        <ul>
+                            <li class="html-skill">웹 페이지의 구조를 잘 이해하고 구성할 수 있습니다.</li>
+                            <li class="html-skill">웹 표준 태그를 활용하여 웹 문서의 의도를 명확히 표현할 수 있습니다.</li>
+                            <li class="css-skill">선택자와 속성을 잘 이해하고 페이지의 레이아웃을 구성하고 웹 페이지를 스타일링할 수 있습니다.</li>
+                            <li class="css-skill">미디어 쿼리를 활용하여 반응형 디자인을 구현할 수 있습니다.</li>
+                            <li class="js-skill">자바스크립트의 문법(변수, 함수, 조건문, 반복문 등)에 익숙합니다.</li>
+                            <li class="js-skill">웹 페이지에서 발생하는 이벤트, 알고리즘들을 문법을 활용하여 잘 처리할 수 있습니다.</li>
+                            <li class="jquery-skill">제이쿼리를 사용하여 이벤트들을 처리하고 요소간의 상호작용을 구현할 수 있습니다.</li>
+                            <li class="jquery-skill">제이쿼리를 활용한 애니메이션을 처리할 수 있습니다.</li>
+                            <li class="sass-skill">SASS 문법으로 스타일링을 수행할 수 있습니다.</li>
+                            <li class="sass-skill">재사용 가능한 블록을 생성하고, 내장된 문법을 통해 프로젝트의 효율성을 향상시킬 수 있습니다.</li>
+                            <li class="parcel-skill">번들러의 기능을 이해하고 parcel 환경에서 개발할 수 있습니다.</li>
+                            <li class="parcel-skill">parcel을 활용해 보다 신속한 개발과 디버깅을 할 수 있습니다.</li>
+                            <li class="react-skill">재사용가능한 컴포넌트를 만들어 효율적인 렌더링을 할 수 있습니다</li>
+                            <li class="react-skill">Redux를 활용하여 상태변화를 추적하고 관리할 수 있습니다.</li>
+                        </ul>
+                    </div>
+                    <div class="skill-tree">
+                        <div class="skill-img"><img src="./img/html.png" id="html-img" alt="html-img"></div>
+                        <div class="skill-img"><img src="./img/css.png" id="css-img" alt="css-img"></div>
+                        <div class="skill-img"><img src="./img/javascript.png" id="javascript-img" alt="javascript-img"></div>
+                        <div class="skill-img"><img src="./img/jquery.png" id="jquery-img" alt="jquery-img"></div>
+                        <div class="skill-img"><img src="./img/sass.png" id="sass-img" alt="sass-img"></div>
+                        <div class="skill-img"><img src="./img/parcel.png" id="parcel-img" alt="parcel-img"></div>
+                        <div class="skill-img"><img src="./img/react.png" id="react-img" alt="react-img"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="profile">
-            <div class="profile-img">
-                <img src="" alt="">
+            <div class="my-profile wrap">
+                <div class="profile-img">
+                    <img src="./img/jquery.png" alt="">
+                </div>
+                <div class="profile-personal">
+                    <p>김나단</p>
+                    <p>백석예술대학교 실용음악학부 졸업</p>
+                    <p>부산광역시 부산진구 거주</p>
+                    <p>1996. 02. 24.</p>
+                    <p>010 6596 6572</p>
+                    <p>defmaybe69@gmail.com</p>
+                </div>
+                <div class="profile-career">
+                    <p>2022-12-30 - 2023-07-14</p>
+                    <p>프론트엔드 개발자(자바스크립트, React)양성과정</p>
+                    <p>2019-09-23 - 2020-02-19</p>
+                    <p>디지털컨버전스 머신러닝 플랫폼 응용SW엔지니어링 구직자과정</p>
+                </div>
             </div>
-            <div class="profile-personal">
-                <p>김나단</p>
-                <p>백석예술대학교 실용음악학부 졸업</p>
-                <p>부산광역시 부산진구 거주</p>
-                <p>1996. 02. 24.</p>
-                <p>010 6596 6572</p>
-                <p>defmaybe69@gmail.com</p>
-            </div>
-            <div class="profile-career">
-                <p>2022-12-30 - 2023-07-14</p>
-                <p>프론트엔드 개발자(자바스크립트, React)양성과정</p>
-                <p>2019-09-23 - 2020-02-19</p>
-                <p>디지털컨버전스 머신러닝 플랫폼 응용SW엔지니어링 구직자 과정</p>
+        </section>
+
+        <section class="projects">
+            <div class="my-project wrap">
+                <!-- <h2>Projects</h2> -->
+                <div class="project">
+                    <div class="project-intro">
+                        <div class="info">
+                            <div class="title">
+                                <img src="./img/carhartt.png" alt="">
+                                <h2>동적 데이터 활용 쇼핑몰 프로젝트 (칼하트)</h2>   
+                            </div>
+                            <div class="desc">
+                                <p>코딩 기간 : 2023년 5월 4일 ~ 6월 14일</p>
+                                <p>HTML, CSS, JAVASCRIPT, JQUERY, SASS 사용</p>
+                            </div>
+                        </div>
+                        <div class="view-more">
+                            <button>웹사이트 보기</button>
+                            <button>Github</button>
+                            <button>프로젝트 기획</button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="content-intro">
+                            <video src="" class="video-main"></video>
+                            <div class="video-desc">
+                                <h2>프로젝트 설명 및 후기</h2>
+                                <p>칼하트의 강점인 거칠고 힙한 브랜드 이미지를 살리면서 사용자의 이용성과 직관성을 높이는 것에 중점을 두었습니다.</p>
+                                <br />
+                                <p>유저 페이지 : 회원가입, 로그인, 계정 찾기 등</p>
+                                <p>메인 페이지 : 애니메이션, 슬라이드 구현</p>
+                                <p>서브 페이지 : 상품 목록 생성 및 페이징, 상품 정렬 및 필터링 기능</p>
+                                <p>디테일 페이지 : 상품 정보 제공 및 리뷰, QNA 등록 및 삭제 구현</p>
+                            </div>
+                        </div>
+                        <div class="content-main">
+                            <div class="swiper">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                  <!-- Slides -->
+                                  <div class="swiper-slide">Slide 1<br /><br /><br /><br /></div>
+                                  <div class="swiper-slide">Slide 2<br /><br /><br /><br /></div>
+                                  <div class="swiper-slide">Slide 3<br /><br /><br /><br /></div>
+                                </div>
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
+                              
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                              
+                                <!-- If we need scrollbar -->
+                                <div class="swiper-scrollbar"></div>
+                              </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
         </section>
 
