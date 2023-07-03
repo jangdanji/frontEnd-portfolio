@@ -119,25 +119,42 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/swiper.js":[function(require,module,exports) {
 var swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'vertical',
-  // loop: true,
-
   // // If we need pagination
-  // pagination: {
-  //   el: '.swiper-pagination',
-  // },
-
+  pagination: {
+    el: '.swiper-pagination'
+  },
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
   }
+});
 
-  // // And if we need scrollbar
-  // scrollbar: {
-  //   el: '.swiper-scrollbar',
-  // },
+/* 스와이퍼 navigation 밖으로 빼기(라기보단 새로 만들기) */
+
+var swipers = document.querySelectorAll('.swiper');
+document.querySelectorAll('.swiper-button-prev').forEach(function (value) {
+  return value.style.display = 'none';
+});
+document.querySelectorAll('.swiper-button-next').forEach(function (value) {
+  return value.style.display = 'none';
+});
+swipers.forEach(function (swiper) {
+  swiper.parentElement.style.position = 'relative';
+  var left = document.createElement('div');
+  left.innerHTML = '<i class="fas fa-chevron-left"></i>';
+  left.style.cssText = 'position: absolute; top: 50%; left: -50px; transform: translateY(-50%); font-size: 50px; cursor: pointer';
+  var right = document.createElement('div');
+  right.innerHTML = '<i class="fas fa-chevron-right"></i>';
+  right.style.cssText = 'position: absolute; top: 50%; right: -50px; transform: translateY(-50%); font-size: 50px; cursor: pointer';
+  left.addEventListener('click', function () {
+    return swiper.querySelector('.swiper-button-prev').click();
+  });
+  right.addEventListener('click', function () {
+    return swiper.querySelector('.swiper-button-next').click();
+  });
+  swiper.parentElement.appendChild(left);
+  swiper.parentElement.appendChild(right);
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -164,7 +181,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "51091" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "14756" + '/');
+>>>>>>> 7b82208bb630410ce841715fc2da9fc3a762cd28
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

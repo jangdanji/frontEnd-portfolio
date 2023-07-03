@@ -19554,15 +19554,23 @@ mySkillsImg.forEach(function (img, index) {
 
 /* 퍼즐의 뒷배경 */
 
-mySkillsImg.forEach(function (img) {
+mySkillsImg.forEach(function (img, index) {
+  var imgSrc = img.getAttribute('src');
+  var puzzleBack = document.querySelector('.puzzle-grid .puzzle-back');
+  var puzzleBackImg = document.createElement('img');
+  puzzleBackImg.setAttribute('src', imgSrc);
+  var tableWidth = document.querySelector('.puzzle-grid table');
+  tableWidth = getComputedStyle(table);
+  tableWidth = parseInt(tableWidth.width);
+  puzzleBack.style.left = "".concat(tableWidth / 2, "px");
+  puzzleBackImg.style.opacity = '0';
+  puzzleBackImg.style.transition = '0.2s';
+  puzzleBack.appendChild(puzzleBackImg);
   img.addEventListener('click', function () {
-    var imgSrc = img.getAttribute('src');
-    var puzzleBack = document.querySelector('.puzzle-grid .puzzle-back');
-    puzzleBack.setAttribute('src', imgSrc);
-    var tableWidth = document.querySelector('.puzzle-grid table');
-    tableWidth = getComputedStyle(table);
-    tableWidth = parseInt(tableWidth.width);
-    puzzleBack.style.left = "".concat(tableWidth / 2, "px");
+    puzzleBack.querySelectorAll('img').forEach(function (img) {
+      return img.style.opacity = '0';
+    });
+    puzzleBackImg.style.opacity = '1';
   });
 });
 
@@ -19610,7 +19618,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "51091" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "14756" + '/');
+>>>>>>> 7b82208bb630410ce841715fc2da9fc3a762cd28
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
