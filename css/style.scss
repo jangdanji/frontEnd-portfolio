@@ -24,6 +24,8 @@ body{
     line-height: 1.5;
 }
 
+$font: 'Nanum Gothic', sans-serif;
+
 
 
 .container{
@@ -34,25 +36,28 @@ body{
     .header{
         width: 1250px;
         margin: 0 auto;
+        
         ul{
             position: fixed; top: 20px;
             z-index: 99999;
-            background-color: rgba($color: white, $alpha: 1);
+            background-color: rgba($color: $color4, $alpha: 1);
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 10px; border: 1px solid $color1;
             font-weight: bold;
+            transition: 0.2s;
 
-    
+
             li{
-                padding: 10px 0;
+                padding: 10px 10px; margin: 0 5px;
                 color: black;
+                 border-radius: 5px;
                 display: inline-block;
-                margin: 0 10px;
+                
                 cursor: pointer;
-                &:hover{
-                    text-decoration: underline;
-                }
+                transition: 0.1s;
+                &:hover{background-color: $color1; color: $color4;}
             }
+            li.active{background-color: $color1; color: $color4;}
         }
     
     }
@@ -424,6 +429,7 @@ body{
                             border: none; border-bottom: 1px solid $color4;
                             color: white; font-size: 18px; line-height: 26px;
                             width: 80%; padding: 5px;
+                            font-family: $font;
                         }
                     }
 
@@ -432,6 +438,7 @@ body{
                         border: 1px solid $color4; color: white; font-size: 18px;
                         border-radius: 10px;
                         width: 50%; padding: 10px;
+                        font-family: $font
                     }
                 }
 

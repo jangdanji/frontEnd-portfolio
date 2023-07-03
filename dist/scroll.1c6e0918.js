@@ -117,16 +117,27 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/common.js":[function(require,module,exports) {
-function setMobileViewportHeight() {
-  var vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
-}
-window.addEventListener('resize', setMobileViewportHeight);
-var bgImgTarget = document.querySelector('.profileMsg');
-
-// bgImgTarget.style.backgroundImage = 'url(./img/background.jpg)'
-// bgImgTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+})({"js/scroll.js":[function(require,module,exports) {
+var header = document.querySelector('.header ul');
+var headerMenus = document.querySelectorAll('.header ul li');
+window.addEventListener('scroll', function () {
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > 0) header.style.opacity = '0.5';else header.style.opacity = '1';
+  var introSection = document.querySelector('section.intro').scrollTop;
+  var profileSection = document.querySelector('section.profile').scrollTop;
+  var projectSection = document.querySelector('section.project').scrollTop;
+  var contactSection = document.querySelector('section.contact').scrollTop;
+  function reset() {
+    headerMenus.forEach(function (menu) {});
+  }
+  if (scrollTop > introSection) headerMenus[0].classList.add('active');
+});
+header.addEventListener('mouseover', function () {
+  return header.style.opacity = 1;
+});
+header.addEventListener('mouseout', function () {
+  return header.style.opacity = 0.5;
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -296,5 +307,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/common.js"], null)
-//# sourceMappingURL=/common.baa7053c.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/scroll.js"], null)
+//# sourceMappingURL=/scroll.1c6e0918.js.map

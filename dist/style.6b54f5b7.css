@@ -31,20 +31,29 @@ body {
   position: fixed;
   top: 20px;
   z-index: 99999;
-  background-color: white;
+  background-color: #eab2a0;
   padding: 10px;
   border-radius: 10px;
+  border: 1px solid #2D4356;
   font-weight: bold;
+  transition: 0.2s;
 }
 .container .header ul li {
-  padding: 10px 0;
+  padding: 10px 10px;
+  margin: 0 5px;
   color: black;
+  border-radius: 5px;
   display: inline-block;
-  margin: 0 10px;
   cursor: pointer;
+  transition: 0.1s;
 }
 .container .header ul li:hover {
-  text-decoration: underline;
+  background-color: #2D4356;
+  color: #EAB2A0;
+}
+.container .header ul li.active {
+  background-color: #2D4356;
+  color: #EAB2A0;
 }
 .container .wrap {
   width: 1250px;
@@ -431,6 +440,7 @@ body {
   line-height: 26px;
   width: 80%;
   padding: 5px;
+  font-family: "Nanum Gothic", sans-serif;
 }
 .container .contact .contact-me .contact-box .text-area textarea {
   background-color: transparent;
@@ -440,6 +450,7 @@ body {
   border-radius: 10px;
   width: 50%;
   padding: 10px;
+  font-family: "Nanum Gothic", sans-serif;
 }
 .container .contact .contact-me .contact-box button {
   width: 150px;
