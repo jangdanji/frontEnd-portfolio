@@ -173,19 +173,20 @@ body {
   transform: translateY(-50%);
 }
 .container .skills .puzzle-grid table tr td.word {
-  border: 1px solid white;
+  border: 1px solid #EAB2A0;
   width: 35px;
   height: 35px;
   text-align: center;
   cursor: pointer;
   text-transform: uppercase;
   transition: 0.1s;
-  background-color: #2D4356;
+  background-color: #435B66;
+  color: #EAB2A0;
 }
 .container .skills .puzzle-grid table tr td.active {
-  background-color: white;
-  color: black;
-  border-color: #ccc;
+  background-color: #EAB2A0;
+  color: #2D4356;
+  border-color: none;
 }
 .container .skills .puzzle-grid .puzzle-back {
   width: 100%;
@@ -267,7 +268,10 @@ body {
   width: 200px;
   margin-right: 10px;
   height: 200px;
-  border: 1px solid white;
+}
+.container .profile .my-profile .profile-img img {
+  width: 100%;
+  height: 100%;
 }
 .container .profile .my-profile .profile-personal {
   width: 515px;

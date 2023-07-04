@@ -12,11 +12,11 @@ window.addEventListener('scroll', function() {
     const projectSection = document.querySelector('section.project').scrollTop
     const contactSection = document.querySelector('section.contact').scrollTop
 
-    function reset() {
-        headerMenus.forEach((menu) => {
+    // function reset() {
+    //     headerMenus.forEach((menu) => {
 
-        })
-    }
+    //     })
+    // }
         
 
     if (scrollTop > introSection)

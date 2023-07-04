@@ -127,9 +127,13 @@ window.addEventListener('scroll', function () {
   var profileSection = document.querySelector('section.profile').scrollTop;
   var projectSection = document.querySelector('section.project').scrollTop;
   var contactSection = document.querySelector('section.contact').scrollTop;
-  function reset() {
-    headerMenus.forEach(function (menu) {});
-  }
+
+  // function reset() {
+  //     headerMenus.forEach((menu) => {
+
+  //     })
+  // }
+
   if (scrollTop > introSection) headerMenus[0].classList.add('active');
 });
 header.addEventListener('mouseover', function () {
@@ -163,7 +167,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52004" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60427" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
