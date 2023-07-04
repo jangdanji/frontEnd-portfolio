@@ -380,7 +380,7 @@ body {
 .container .projects .project .project-content .content-main .swiper {
   width: 100%;
   height: 50vh;
-  padding-top: 150px;
+  margin-top: 150px;
 }
 .container .projects .project .project-content .content-main .swiper .content-detail {
   display: flex;
