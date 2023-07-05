@@ -121,7 +121,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 var header = document.querySelector('.header ul');
 var headerMenus = document.querySelectorAll('.header ul li');
 window.addEventListener('scroll', function () {
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  var scrollTop = document.documentElement.scrollTop || window.pageYOffset;
   if (scrollTop > 0) header.style.opacity = '0.5';else header.style.opacity = '1';
   var introSection = document.querySelector('section.intro').scrollTop;
   var profileSection = document.querySelector('section.profile').scrollTop;
@@ -167,7 +167,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61253" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50028" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

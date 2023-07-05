@@ -2,7 +2,7 @@ const header = document.querySelector('.header ul')
 const headerMenus = document.querySelectorAll('.header ul li')
 
 window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    const scrollTop = document.documentElement.scrollTop || window.pageYOffset
 
     if (scrollTop > 0) header.style.opacity = '0.5'
     else header.style.opacity = '1'
