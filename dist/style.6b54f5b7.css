@@ -444,12 +444,13 @@ body {
 .container .contact .contact-me .contact-box .title h1 {
   color: #EAB2A0;
 }
-.container .contact .contact-me .contact-box .title p {
+.container .contact .contact-me .contact-box .title a {
+  display: block;
   cursor: pointer;
   text-decoration: underline;
   color: #EAB2A0;
 }
-.container .contact .contact-me .contact-box .title p:hover {
+.container .contact .contact-me .contact-box .title a:hover {
   color: white;
 }
 .container .contact .contact-me .contact-box .text-area {
@@ -521,6 +522,13 @@ body {
   height: 100vh;
   display: none;
   overflow: hidden;
+}
+.full-modal .loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 }
 .full-modal .my-code {
   position: absolute;
