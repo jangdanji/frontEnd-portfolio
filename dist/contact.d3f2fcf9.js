@@ -117,47 +117,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/scroll.js":[function(require,module,exports) {
-var header = document.querySelector('.header ul');
-var headerMenus = document.querySelectorAll('.header ul li');
-var sections = document.querySelectorAll('.container > section');
-var profileSection = $('section.profile').scrollTop();
-console.log(profileSection);
-window.addEventListener('scroll', function () {
-  var scrollTop = document.documentElement.scrollTop;
-  if (scrollTop > 0) header.style.opacity = '0.5';else header.style.opacity = '1';
-  var introSection = document.querySelector('section.intro').scrollTop;
-  var profileSection = document.querySelector('section.profile');
-  // const projectSection = document.querySelector('section.project').scrollTop
-  // const contactSection = document.querySelector('section.contact').scrollTop
-
-  // console.log(profileSection.scrollTop)
-
-  // function reset() {
-  //     headerMenus.forEach((menu) => {
-
-  //     })
-  // }
-
-  // if (scrollTop > introSection)
-  //     headerMenus[0].classList.add('active')
-});
-
-header.addEventListener('mouseover', function () {
-  return header.style.opacity = 1;
-});
-header.addEventListener('mouseout', function () {
-  return header.style.opacity = 0.5;
-});
-headerMenus.forEach(function (menu, index) {
-  menu.addEventListener('click', function () {
-    var arrival = sections[index];
-    arrival.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "start"
-    });
-  });
+})({"js/contact.js":[function(require,module,exports) {
+var sendBtn = document.querySelector('.contact-box button');
+var inputText1 = document.querySelector('.text-area input:nth-child(1)');
+var inputText2 = document.querySelector('.text-area input:nth-child(2)');
+var inputTextarea = document.querySelector('.text-area textarea');
+sendBtn.addEventListener('click', function () {
+  alert('감사합니다!');
+  inputText1.value = '';
+  inputText2.value = '';
+  inputTextarea.value = '';
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -328,5 +297,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/scroll.js"], null)
-//# sourceMappingURL=/scroll.1c6e0918.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/contact.js"], null)
+//# sourceMappingURL=/contact.d3f2fcf9.js.map
