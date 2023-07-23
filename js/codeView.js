@@ -6,13 +6,14 @@ const myCode = document.querySelector('.full-modal .my-code')
 const exit = document.querySelector('.full-modal .exit')
 
 exit.addEventListener('click', function(){
-    console.log(123)
     body.style.overflow = 'auto'
     fullModal.style.display = 'none'
 })
 
-
 const codeList = [
+    {url : 'https://carbon.now.sh/embed/rO2lsh902VDLX5LA4YJF', height : '1098'},
+    {url : 'https://carbon.now.sh/embed/Fx5SmmOOEaEfH7yEgW89', height : '1638'},
+    {url : 'https://carbon.now.sh/embed/OJ2Az38FMIDqJqj5JwBo', height : '968'},
     {url : 'https://carbon.now.sh/embed/JRrXEIh54d2gvGEAc6Rb', height : '1228'},
     {url : 'https://carbon.now.sh/embed/mPHIaYMBea9HyAMpeNvx', height : '1805'},
     {url : 'https://carbon.now.sh/embed/9hmg8PPID5hzeIiwPwsB', height : '1991'},

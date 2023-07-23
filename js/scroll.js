@@ -3,7 +3,7 @@ const headerMenus = document.querySelectorAll('.header ul li')
 const sections = document.querySelectorAll('.container > section')
 
 const profileSection = $('section.profile').scrollTop()
-console.log(profileSection)
+// console.log(profileSection)
 
 window.addEventListener('scroll', function() {
     const scrollTop = document.documentElement.scrollTop
