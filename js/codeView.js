@@ -11,6 +11,9 @@ exit.addEventListener('click', function(){
 })
 
 const codeList = [
+    {url : 'https://carbon.now.sh/embed/SCtEZIh4IXUN15n9iK44', height : '1154'},
+    {url : 'https://carbon.now.sh/embed/UgT0v5G82Eh17qyWmzT8', height : '1042'},
+    {url : 'https://carbon.now.sh/embed/uOOGi24aa1jCr31LGTLi', height : '4522'},
     {url : 'https://carbon.now.sh/embed/rO2lsh902VDLX5LA4YJF', height : '1098'},
     {url : 'https://carbon.now.sh/embed/Fx5SmmOOEaEfH7yEgW89', height : '1638'},
     {url : 'https://carbon.now.sh/embed/OJ2Az38FMIDqJqj5JwBo', height : '968'},
