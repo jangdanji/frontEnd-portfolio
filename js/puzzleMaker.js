@@ -22,10 +22,9 @@ puzzle.appendChild(table)
 
 const columnText = [
     { row: 1, col: 3, word: 'jquery' },
-    { row: 4, col: 2, word: 'sass' },
-    { row: 7, col: 1, word: 'parcel' },
     { row: 10, col: 2, word: 'html' },
     { row: 4, col: 7, word: 'css' },
+    { row: 8, col: 2, word: 'git' },
 ]
 
 const rowText = [
@@ -177,6 +176,8 @@ mySkillsImg.forEach((img, index) => {
         puzzleBack.style.left = `${tableWidth / 2}px`
         puzzleBackImg.style.opacity = '0'
         puzzleBackImg.style.transition = '0.2s'
+        puzzleBackImg.style.width = "200px"
+        puzzleBackImg.style.height = "200px"
         puzzleBack.appendChild(puzzleBackImg)
 
         img.addEventListener('click', function(){

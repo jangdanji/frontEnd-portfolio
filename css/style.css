@@ -374,14 +374,10 @@ body {
 }
 .container .projects .project .project-content .content-intro .video-desc .description {
   display: flex;
+  gap: 30px;
 }
 .container .projects .project .project-content .content-intro .video-desc .description p:first-child {
-  width: calc(50% - 30px);
-  border-right: 1px solid #EAB2A0;
-  padding-right: 30px;
-}
-.container .projects .project .project-content .content-intro .video-desc .description p:last-child {
-  margin-left: 30px;
+  flex: 1;
 }
 .container .projects .project .project-content .content-main .swiper {
   width: 100%;
